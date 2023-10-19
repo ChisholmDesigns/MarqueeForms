@@ -171,13 +171,7 @@ $('.select-item').each(function(){
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
-        setup: function (editor) {
-        editor.on('init', function () {
-            var content = 'Written by <strong>William Shakespeare</strong>';
-            editor.setContent(content);
-        });
-    }
-    });
+   
     tinymce.init({
         selector: '#event-setting',
             menu: {
