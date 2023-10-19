@@ -179,7 +179,7 @@ $('.select-item').each(function(){
     }
     });
     tinymce.init({
-        selector: '#event-message',
+        selector: '#event-frontpage',
         content_style: 'body { line-height: 1.1; }',
             menu: {
             edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
