@@ -1,0 +1,39 @@
+#content.light-mode {background-color: #ffffff;color: #171717;}
+  #content.light-mode a {color: #171717;}
+  #content.light-mode path {fill: #F0F0F0;}
+  #content.light-mode div.md-section {background-color: #ffff;}
+  #content.light-mode .lightbox {background-color: #ffff;}
+  #content.light-mode div.md-songlist-wrapper { background-color: #ffff;}
+  #content.dark-mode {background-color: #1f1f1f; color:#ffff;}
+  #content.dark-mode a.w—current { color: #707AFF;}
+  #content.dark-mode .contentdiv {background-color: #1f1f1f;}
+  #content.dark-mode .contentdiv-first { background-color: #1f1f1f;}
+  #content.dark-mode .lightbox {background-color: #1f1f1f;}
+  #content.dark-mode .md-union-rich-text {background-color: #1f1f1f;}
+  #content.dark-mode div.md-section.bottommenu {background-color: #1f1f1f;}
+  #content.dark-mode div.md-title-box { background-color: #1f1f1f;}
+  #content.dark-mode div.showboard-wrapper { background-color: #1f1f1f;}
+  #content.dark-mode div.md-deal-div { background-color: #1f1f1f;}
+  #content.dark-mode div.biodiv { background-color: #1f1f1f;}
+  #content.dark-mode div.biodiv { background-color: #1f1f1f;}
+  #content.dark-mode div.circlediv { background-color: #1f1f1f;}
+
+  #content.dark-mode h2 { color:#ffff; opacity: 87; }
+  #content.dark-mode h4 { color:#ffff; opacity: 87; }
+  #content.dark-mode h1 { color:#ffff; opacity: 87; }
+  #content.dark-mode h3 { color:#ffff; opacity: 87; }
+  #content.dark-mode h5 { color:#ffff; opacity: 87; }
+  #content.dark-mode h6 { color:#ffff; opacity: 87; }
+  #content.dark-mode p { color:#ffff; opacity: 87; }
+  #content.dark-mode a { color:#ffff; opacity: 87; }
+  #content.dark-mode .textblockbottom{ color:#ffff; opacity: 87; }
+  #content.dark-mode strong { color:#ffff; opacity: 87; }
+  #content.dark-mode .icon-name { color:#ffff; opacity: 87; }
+  #content.dark-mode .pronountitle { color:#ffff; opacity: 87; }
+  #content.dark-mode img.circleicon {filter: invert(87%);}
+  #content.dark-mode img.sdc-logos {filter: invert(87%);}
+  #content.dark-mode img.bottommenuicon {filter: invert(87%);}
+  
+  #content.dark-mode path {
+ fill: #2f2f2f;
+}
