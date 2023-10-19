@@ -1,6 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
-<script>
-    $(document).ready(function () {
+ $(document).ready(function () {
         $('[data-toggle="datepicker"]').datepicker({
             format: 'mm-dd-yyyy'
         });
@@ -13,8 +11,6 @@
         }
     });
 
-</script>
-<script>
 document.addEventListener("DOMContentLoaded", function () {
 
   var splide = new Splide(".splide", {
@@ -140,17 +136,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
-</script>
 
- <script>
 
 $('.select-item').each(function(){
 	var s = $(this).text();
   $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
   })
-</script>
+
 <!-- RTE -->
-<script>
+
     tinymce.init({
         selector: '#artist-bio',
           content_style: 'body { line-height: 1.1; }',
@@ -165,9 +159,7 @@ $('.select-item').each(function(){
        
     });
   
-</script>
 
-  <script>
     tinymce.init({
         selector: '#event-credits',
         content_style: 'body { line-height: 1.1; }',
@@ -232,9 +224,3 @@ $('.select-item').each(function(){
         toolbar_mode: 'floating',
     });
 
-</script>
-
-<style> .tox-tinymce {
-  width: 100% !important;
-}
-</style>
