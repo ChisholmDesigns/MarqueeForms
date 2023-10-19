@@ -171,6 +171,13 @@ $('.select-item').each(function(){
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	         setup: function (editor) {
+        editor.on('init', function () {
+            var content = 'Written by <strong>William Shakespeare</strong>';
+            editor.setContent(content);
+        });
+    }
+    });
    
     tinymce.init({
         selector: '#event-setting',
@@ -205,4 +212,104 @@ $('.select-item').each(function(){
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
+
+tinymce.init({
+        selector: '#ml-frontpage',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+        content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
+        setup: function (editor) { editor.on('init', function () {
+            var content = 'Written by <strong>William Shakespeare</strong>';
+            editor.setContent(content);
+        });
+    }
+    });
+    tinymce.init({
+        selector: '#ml-message',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-message-2',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-message-3',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-setting',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-additional-messaging',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-special',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-sponsors',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+        setup: function (editor) {
+        editor.on('init', function () {
+            var content = '<ul><li>Shakespeare Birthplace Trust</li><li>The Old Globe</li></ul>';
+            editor.setContent(content);
+        });
+    } });
 
