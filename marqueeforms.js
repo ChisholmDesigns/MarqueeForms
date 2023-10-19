@@ -161,7 +161,7 @@ $('.select-item').each(function(){
   
 
     tinymce.init({
-        selector: '#event-credits',
+        selector: '#event-frontpage',
         content_style: 'body { line-height: 1.1; }',
         menu: {
             edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
@@ -177,18 +177,6 @@ $('.select-item').each(function(){
             editor.setContent(content);
         });
     }
-    });
-    tinymce.init({
-        selector: '#event-frontpage',
-        content_style: 'body { line-height: 1.1; }',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
     });
     tinymce.init({
         selector: '#event-setting',
