@@ -237,3 +237,4 @@ $('.select-item').each(function(){
 <style> .tox-tinymce {
   width: 100% !important;
 }
+</style>
