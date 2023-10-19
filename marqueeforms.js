@@ -162,7 +162,6 @@ $('.select-item').each(function(){
 
     tinymce.init({
         selector: '#event-frontpage',
-        content_style: 'body { line-height: 1.1; }',
         menu: {
             edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
