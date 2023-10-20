@@ -229,7 +229,7 @@ tinymce.init({
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
-        content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
+        
         setup: function (editor) {
         editor.on('init', function () {
             var urlParams = new URLSearchParams(window.location.search);
