@@ -10,7 +10,9 @@
             $('[data-toggle="datepicker"]').attr('readonly', 'readonly')
         }
     });
+
 document.addEventListener("DOMContentLoaded", function () {
+
   var splide = new Splide(".splide", {
     type: "fade",
     drag: false,
@@ -34,11 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var isValidEmail = validateEmail(emailValue);
 
     if (!isValidEmail) {
-      // If the email is invalid, show the error message and add the error class to the input
       emailErrorMessage.classList.remove("hide");
       emailInput.classList.add("error");
     } else {
-      // If the email is valid, hide the error message and remove the error class from the input
       emailErrorMessage.classList.add("hide");
       emailInput.classList.remove("error");
     }
@@ -53,10 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "textarea[required], input[required], select[required], checkbox[required], radio[required]"
       )
     );
-    
-    let dateInput = slide.querySelector("#Opening-Date");  // Assuming the id of your date input is "Opening-Date"
 
-    // Get the next button within the specific splide slide
     let nextButton = nextButtons[step];
 
     function checkInputs() {
@@ -65,15 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
           return input.checked;
         } else if (input.type === "email") {
           return validateEmail(input.value);
-        } else if (input === dateInput) {
-          return dateInput.value.trim() !== "";  // Adjust this line based on how datepicker.js represents selected dates
         } else {
           return input.value.trim() !== "";
         }
       });
 
       if (nextButton) {
-        // Check if nextButton exists before accessing it
         if (allFilled) {
           nextButton.classList.remove("is-disabled");
         } else {
@@ -81,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // If this is the last slide, enable or disable the submit button
       if (step === document.querySelectorAll(".splide__slide").length - 1) {
         if (allFilled) {
           submitButton.classList.remove("is-disabled");
@@ -98,39 +91,37 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener("input", checkInputs);
       }
     });
-    
-    if (dateInput) {
-      dateInput.addEventListener("change", checkInputs);  // Assuming datepicker.js triggers a "change" event
-    }
 
-    // Initial check when the page is loaded
     checkInputs();
   }
 
-  // Validate mandatory inputs for all slides when the page is loaded
-  Array.from(document.querySelectorAll(".splide__slide")).forEach(
-    (_, index) => {
-      validateMandatoryInputs(index);
-    }
-  );
+  // New function to initiate validation checks
+  function initiateValidation() {
+    // Validate mandatory inputs for all slides when the page is loaded
+    Array.from(document.querySelectorAll(".splide__slide")).forEach(
+      (_, index) => {
+        validateMandatoryInputs(index);
+      }
+    );
+  }
 
-  // Click handler for next button
+  // Set a timeout to ensure that the fields are populated before running the validation checks.
+  setTimeout(initiateValidation, 100);  // Adjust the timeout duration as needed
+
   nextButtons.forEach((button, index) => {
     button.addEventListener("click", (event) => {
       console.log("Moving to next step...");
       let currentStep = button.closest(".splide__slide");
       let nextStep = currentStep.nextElementSibling;
 
-      // Check if the button has the 'is-disabled' class before proceeding
       if (button.classList.contains("is-disabled")) {
-        event.preventDefault(); // Prevent the click action
+        event.preventDefault();
       } else {
         splide.go("+1");
       }
     });
   });
 
-  // Click handler for previous button
   prevButtons.forEach((button) => {
     button.addEventListener("click", function () {
       console.log("Moving to previous step...");
@@ -138,10 +129,204 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Add click event to submit button to prevent submission if it's disabled
   submitButton.addEventListener("click", function (event) {
     if (submitButton.classList.contains("is-disabled")) {
-      event.preventDefault(); // Prevent the submission
+      event.preventDefault();
     }
   });
+
 });
+
+
+$('.select-item').each(function(){
+	var s = $(this).text();
+  $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
+  })
+
+<!-- RTE -->
+
+    tinymce.init({
+        selector: '#artist-bio',
+          content_style: 'body { line-height: 1.1; }',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+       
+    });
+  
+
+    tinymce.init({
+        selector: '#event-credits',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+     
+});
+   
+    tinymce.init({
+        selector: '#event-setting',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#event-additional-messaging',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#event-special',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+  tinymce.init({
+        selector: '#event-message',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+tinymce.init({
+        selector: '#ml-frontpage',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+      
+});
+    tinymce.init({
+        selector: '#ml-message',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-message-2',
+            menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-message-3',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-setting',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-additional-messaging',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-special',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+tinymce.init({
+        selector: '#board-members',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+    });
+    tinymce.init({
+        selector: '#ml-sponsors',
+           menu: {
+            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+            format: { title: 'Format', items: 'bold italic underline | removeformat' },
+            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        },
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        toolbar_mode: 'floating',
+	    setup: function (editor) {
+        editor.on('init', function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var frontParam = urlParams.get('sponsors');
+            if (frontParam) {
+                editor.setContent(frontParam);
+            } else {
+                var content = '<ul><li>Shakespeare Birthplace Trust</li><li>The Old Globe</li></ul>';
+                editor.setContent(content);
+            }
+        });
+    }
+});
+
