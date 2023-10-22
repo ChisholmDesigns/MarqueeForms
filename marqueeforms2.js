@@ -137,20 +137,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-var mapping = {
-    "School": "6532cbf1534fbcc14b92a269",
-    "Solo Show": "6532ca4ae133c059970808a3",
-	"Holiday": "6532c6e54d062c0cb61f4cf0",
-    // ... add more mappings as needed
-};
-
 $('.select-item').each(function(){
-    var s = $(this).text();
-    var value = mapping[s];  // Look up the Webflow ID from the mapping object
-    if (value) {  // Only append the option if a mapping was found
-        $('.tag-select').append('<option value="'+value+'">'+s+'</option>');
-    }
-});
+	var s = $(this).text();
+  $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
+  })
 
 <!-- RTE -->
 
