@@ -142,6 +142,15 @@ $('.select-item').each(function(){
   $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
   })
 
+	const queryString = window.location.search;
+console.log(queryString);
+
+const urlParams = new URLSearchParams(queryString);
+if (urlParams.has('update=rec')) {
+  var x = document.getElementById("hide-on-update");
+  x.style.display = "none";  
+}
+
 <!-- RTE -->
 
     tinymce.init({
