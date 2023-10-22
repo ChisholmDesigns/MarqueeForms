@@ -142,14 +142,7 @@ $('.select-item').each(function(){
   $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
   })
 
-	const queryString = window.location.search;
-console.log(queryString);
-
-const urlParams = new URLSearchParams(queryString);
-if (urlParams.has('update')) {
-    var partnerBtn = document.getElementById("hide-on-update");
-    partnerBtn.style.display = "none";
-}
+	
 
 <!-- RTE -->
 
