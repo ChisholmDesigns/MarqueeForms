@@ -147,8 +147,8 @@ console.log(queryString);
 
 const urlParams = new URLSearchParams(queryString);
 if (urlParams.has('update')) {
-  var x = document.getElementById("hide-on-update");
-  x.style.display = "none";  
+    var partnerBtn = document.getElementById("hide-on-update");
+    partnerBtn.style.display = "none";
 }
 
 <!-- RTE -->
