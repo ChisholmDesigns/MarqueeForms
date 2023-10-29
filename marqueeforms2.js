@@ -262,6 +262,7 @@ tinymce.init({
             }
         });
     }
+ });
     tinymce.init({
         selector: '#ml-message',
             menu: {
