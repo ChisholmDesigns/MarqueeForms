@@ -306,15 +306,17 @@ tinymce.init({
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
-  tinymce.init({
+ tinymce.init({
     selector: '#ml-message-3',
     menu: {
-        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-        format: { title: 'Format', items: 'bold italic underline | removeformat' },
-        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+        file: { title: 'File', items: 'newdocument restoredraft | preview | print ' },
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall' },
+        view: { title: 'View', items: 'code | preview | visualaid visualchars visualblocks | spellchecker | fullscreen' },
+        insert: { title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
+        format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | code wordcount' },
     },
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-    // table_toolbar: '',  // Comment out or remove this line
     toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
 });
