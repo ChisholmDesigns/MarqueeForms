@@ -306,18 +306,19 @@ tinymce.init({
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
-    tinymce.init({
-        selector: '#ml-message-3',
-           menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-    });
+  tinymce.init({
+    selector: '#ml-message-3',
+    menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+    // table_toolbar: '',  // Comment out or remove this line
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+});
+
     tinymce.init({
         selector: '#ml-setting',
            menu: {
