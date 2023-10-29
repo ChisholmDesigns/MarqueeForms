@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
-	    setup: function (editor) {
+	  content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
+        setup: function (editor) {
         editor.on('init', function () {
             var urlParams = new URLSearchParams(window.location.search);
             var frontParam = urlParams.get('front');
@@ -204,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
- });
+});
    
     tinymce.init({
         selector: '#event-setting',
@@ -213,8 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -224,8 +225,8 @@ document.addEventListener('DOMContentLoaded', () => {
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -235,8 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
   tinymce.init({
@@ -246,8 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
 tinymce.init({
@@ -257,7 +258,7 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
 	  content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
@@ -282,8 +283,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -293,8 +294,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -304,8 +305,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -315,8 +316,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -326,8 +327,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -337,8 +338,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
 tinymce.init({
@@ -348,8 +349,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
     tinymce.init({
@@ -359,8 +360,8 @@ tinymce.init({
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
+       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
 	    setup: function (editor) {
         editor.on('init', function () {
