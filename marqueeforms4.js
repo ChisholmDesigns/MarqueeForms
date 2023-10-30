@@ -13,155 +13,155 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  var splide = new Splide(".splide", {
-    type: "fade",
-    drag: false,
-    arrows: false,
-    pagination: false
-  }).mount();
+    var splide = new Splide(".splide", {
+        type: "fade",
+        drag: false,
+        arrows: false,
+        pagination: false
+    }).mount();
 
-  var nextButtons = document.querySelectorAll(".next-button");
-  var prevButtons = document.querySelectorAll(".prev-button");
-  var submitButton = document.querySelector(".button-primary"); // The submit button
-  var emailInput = document.querySelector("#Email");
-  var emailErrorMessage = document.querySelector("#email-error-message");
+    var nextButtons = document.querySelectorAll(".next-button");
+    var prevButtons = document.querySelectorAll(".prev-button");
+    var submitButton = document.querySelector(".button-primary");
+    var emailInput = document.querySelector("#Email");
+    var emailErrorMessage = document.querySelector("#email-error-message");
 
-  function validateEmail(email) {
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
-
-  emailInput.addEventListener("blur", function () {
-    var emailValue = emailInput.value;
-    var isValidEmail = validateEmail(emailValue);
-
-    if (!isValidEmail) {
-      emailErrorMessage.classList.remove("hide");
-      emailInput.classList.add("error");
-    } else {
-      emailErrorMessage.classList.add("hide");
-      emailInput.classList.remove("error");
-    }
-  });
-
-  // Function to validate mandatory input fields for a specific slide
-  function validateMandatoryInputs(step) {
-    console.log("Checking mandatory fields for step: ", step);
-    let slide = document.querySelectorAll(".splide__slide")[step];
-    let mandatoryInputs = Array.from(
-      slide.querySelectorAll(
-        "textarea[required], input[required], select[required], checkbox[required], radio[required]"
-      )
-    );
-
-    let nextButton = nextButtons[step];
-
-    function checkInputs() {
-      let allFilled = mandatoryInputs.every((input) => {
-        if (input.type === "checkbox" || input.type === "radio") {
-          return input.checked;
-        } else if (input.type === "email") {
-          return validateEmail(input.value);
-        } else {
-          return input.value.trim() !== "";
-        }
-      });
-
-      if (nextButton) {
-        if (allFilled) {
-          nextButton.classList.remove("is-disabled");
-        } else {
-          nextButton.classList.add("is-disabled");
-        }
-      }
-
-      if (step === document.querySelectorAll(".splide__slide").length - 1) {
-        if (allFilled) {
-          submitButton.classList.remove("is-disabled");
-        } else {
-          submitButton.classList.add("is-disabled");
-        }
-      }
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
     }
 
-    mandatoryInputs.forEach((input) => {
-      if (input.type === "checkbox" || input.type === "radio") {
-        input.addEventListener("change", checkInputs);
-      } else {
-        input.addEventListener("input", checkInputs);
-      }
+    emailInput.addEventListener("blur", function () {
+        var emailValue = emailInput.value;
+        var isValidEmail = validateEmail(emailValue);
+
+        if (!isValidEmail) {
+            emailErrorMessage.classList.remove("hide");
+            emailInput.classList.add("error");
+        } else {
+            emailErrorMessage.classList.add("hide");
+            emailInput.classList.remove("error");
+        }
     });
 
-    checkInputs();
-  }
+    function validateMandatoryInputs(step) {
+        console.log("Checking mandatory fields for step: ", step);
+        let slide = document.querySelectorAll(".splide__slide")[step];
+        let mandatoryInputs = Array.from(
+            slide.querySelectorAll(
+                "textarea[required], input[required], select[required], checkbox[required], radio[required]"
+            )
+        );
 
-  // New function to initiate validation checks
-  function initiateValidation() {
-    // Validate mandatory inputs for all slides when the page is loaded
-    Array.from(document.querySelectorAll(".splide__slide")).forEach(
-      (_, index) => {
-        validateMandatoryInputs(index);
-      }
-    );
-  }
+        let nextButton = nextButtons[step];
 
-  // Set a timeout to ensure that the fields are populated before running the validation checks.
-  setTimeout(initiateValidation, 100);  // Adjust the timeout duration as needed
+        function checkInputs() {
+            let allFilled = mandatoryInputs.every((input) => {
+                if (input.type === "checkbox" || input.type === "radio") {
+                    return input.checked;
+                } else if (input.type === "email") {
+                    return validateEmail(input.value);
+                } else if (input.type === 'text' && input.hasAttribute('data-toggle') && input.getAttribute('data-toggle') === 'datepicker') {  // <-- New code here
+                    return input.value.trim() !== '';
+                } else {
+                    return input.value.trim() !== "";
+                }
+            });
 
-  nextButtons.forEach((button, index) => {
-    button.addEventListener("click", (event) => {
-      console.log("Moving to next step...");
-      let currentStep = button.closest(".splide__slide");
-      let nextStep = currentStep.nextElementSibling;
+            if (nextButton) {
+                if (allFilled) {
+                    nextButton.classList.remove("is-disabled");
+                } else {
+                    nextButton.classList.add("is-disabled");
+                }
+            }
 
-      if (button.classList.contains("is-disabled")) {
-        event.preventDefault();
-      } else {
-        splide.go("+1");
-      }
-    });
-  });
+            if (step === document.querySelectorAll(".splide__slide").length - 1) {
+                if (allFilled) {
+                    submitButton.classList.remove("is-disabled");
+                } else {
+                    submitButton.classList.add("is-disabled");
+                }
+            }
+        }
 
-  prevButtons.forEach((button) => {
-    button.addEventListener("click", function () {
-      console.log("Moving to previous step...");
-      splide.go("-1");
-    });
-  });
+        mandatoryInputs.forEach((input) => {
+            if (input.type === "checkbox" || input.type === "radio") {
+                input.addEventListener("change", checkInputs);
+            } else {
+                input.addEventListener("input", checkInputs);
+            }
+        });
 
-  submitButton.addEventListener("click", function (event) {
-    if (submitButton.classList.contains("is-disabled")) {
-      event.preventDefault();
+        checkInputs();
     }
-  });
+
+    function initiateValidation() {
+        Array.from(document.querySelectorAll(".splide__slide")).forEach(
+            (_, index) => {
+                validateMandatoryInputs(index);
+            }
+        );
+    }
+
+    setTimeout(initiateValidation, 1000);  // <-- New code here (adjusted timeout duration)
+
+    nextButtons.forEach((button, index) => {
+        button.addEventListener("click", (event) => {
+            console.log("Moving to next step...");
+            let currentStep = button.closest(".splide__slide");
+            let nextStep = currentStep.nextElementSibling;
+
+            if (button.classList.contains("is-disabled")) {
+                event.preventDefault();
+            } else {
+                splide.go("+1");
+            }
+        });
+    });
+
+    prevButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+            console.log("Moving to previous step...");
+            splide.go("-1");
+        });
+    });
+
+    submitButton.addEventListener("click", function (event) {
+        if (submitButton.classList.contains("is-disabled")) {
+            event.preventDefault();
+        }
+    });
+
+    $('[data-toggle="datepicker"]').datepicker().on('changeDate', function(e) {  // <-- New code here
+        // Assuming the datepicker is on the first slide (index 0)
+        validateMandatoryInputs(0);  
+    });
 
 });
 
 $('.select-item').each(function(){
-	var s = $(this).text();
-  $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
-  })
+    var s = $(this).text();
+    $('.tag-select').append('<option value="'+s+'">'+s+'</option>');
+});
 
-// when the DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  const BACK_ONE_SELECTOR = '[fs-hacks-element="go-back-1"]';
-  const BACK_TWO_SELECTOR = '[fs-hacks-element="go-back-2"]';
-  const backOne = document.querySelector(BACK_ONE_SELECTOR);
-  const backTwo = document.querySelector(BACK_TWO_SELECTOR);
+document.addEventListener('DOMContentLoaded', () => {
+    const BACK_ONE_SELECTOR = '[fs-hacks-element="go-back-1"]';
+    const BACK_TWO_SELECTOR = '[fs-hacks-element="go-back-2"]';
+    const backOne = document.querySelector(BACK_ONE_SELECTOR);
+    const backTwo = document.querySelector(BACK_TWO_SELECTOR);
 
-  if (!backOne || !backTwo) return;
+    if (!backOne || !backTwo) return;
 
-  backOne.addEventListener('click', function (e) {
-    e.preventDefault();
+    backOne.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.history.back();
+    });
 
-    window.history.back();
-  });
-
-  backTwo.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    window.history.go(-2);
-  });
+    backTwo.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.history.go(-2);
+    });
 });
 
 
