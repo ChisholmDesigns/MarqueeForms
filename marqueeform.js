@@ -96,15 +96,26 @@ document.addEventListener("DOMContentLoaded", function () {
         checkInputs();
     }
 
-    function initiateValidation() {
-        Array.from(document.querySelectorAll(".splide__slide")).forEach(
-            (_, index) => {
-                validateMandatoryInputs(index);
-            }
-        );
-    }
+ function initiateValidation() {
+    // Validate mandatory inputs for all slides when the page is loaded
+    Array.from(document.querySelectorAll(".splide__slide")).forEach(
+        (_, index) => {
+            validateMandatoryInputs(index);
+        }
+    );
 
-    setTimeout(initiateValidation, 1000);  // <-- New code here (adjusted timeout duration)
+    // Manually trigger an 'input' event on all inputs to ensure prefilled values are recognized
+    document.querySelectorAll('input, textarea, select').forEach(input => {
+        var event = new Event('input', {
+            bubbles: true,
+            cancelable: true,
+        });
+        input.dispatchEvent(event);
+    });
+}
+
+// Set a timeout to ensure that the fields are populated before running the validation checks.
+setTimeout(initiateValidation, 1000); 
 
     nextButtons.forEach((button, index) => {
         button.addEventListener("click", (event) => {
