@@ -368,7 +368,19 @@ tinymce.init({
 	table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
-    });
+ setup: function (editor) {
+        editor.on('init', function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var frontParam = urlParams.get('board');
+            if (frontParam) {
+                editor.setContent(frontParam);
+            } else {
+                var content = '<ul><li>Sir Derek Jacobi</li><li>Sutton Foster</li></ul>';
+                editor.setContent(content);
+            }
+        });
+    }
+});
     tinymce.init({
         selector: '#ml-sponsors',
            menu: {
