@@ -1,5 +1,5 @@
 const scriptSources = [
-  { src: "https://cdn.crop.guide/loader/l.js?c=GKGLXB", defer: true },
+  
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmscombine@1/cmscombine.js", async: true },
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsnest@1/cmsnest.js", async: true },
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-modal@1/modal.js", async: true },
