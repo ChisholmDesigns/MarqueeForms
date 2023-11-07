@@ -6,8 +6,6 @@
     var newUrl = window.location.href.split('?')[0] + '?cacheBust=' + uniqueToken;
     window.location.href = newUrl;
   });
-</script>
-<script>
 $(document).ready(function() {
   // Count for each category
   const standardCount = $('[data-category="Marquee Pro"]').length;
