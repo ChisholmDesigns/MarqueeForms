@@ -36,8 +36,6 @@ window.onload = function(){
         }
     });
 
-
-<script>
     document.addEventListener("DOMContentLoaded", function() {
         const copyButtons = document.querySelectorAll(".copyButton");
 
