@@ -1,6 +1,10 @@
 
-if(!$('.splide__list.a').length){	
-  // hide .hack30-static-title
+// Check if the '.splide__list.a' exists and has no list items
+if ($('.splide__list.a').length && $('.splide__list.a').children().length === 0) {	
+  // Show .no-marquee-div because the collection is empty
+  $('.no-marquee-div').show();
+} else {
+  // Hide .no-marquee-div because the collection is not empty
   $('.no-marquee-div').hide();
 }
 
