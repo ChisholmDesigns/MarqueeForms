@@ -1,4 +1,10 @@
 
+if(!$('.splide__list.a').length){	
+  // hide .hack30-static-title
+  $('.no-marquee-div').hide();
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
   // Function to update the border radius on the last visible tab within a specific parent component
   function updateLastTabBorderRadius(parentSelector) {
