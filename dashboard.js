@@ -1,5 +1,38 @@
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to update the border radius on the last visible tab within a specific parent component
+  function updateLastTabBorderRadius(parentSelector) {
+    const parentElement = document.querySelector(parentSelector); // Find the specific parent tab component
+    if (!parentElement) return; // Exit if the parent element isn't found
 
+    const tabs = parentElement.querySelectorAll('.linktab'); // Find tabs within this parent
+    let lastVisibleTab = null;
+
+    // Reset styles for all tabs initially
+    tabs.forEach(tab => {
+      if (tab.offsetParent !== null) {
+        lastVisibleTab = tab; // Update last visible tab if the current tab is visible
+        tab.style.borderTopRightRadius = '0'; // Reset border radius for non-last tabs
+        tab.style.borderBottomRightRadius = '0'; // Reset border radius for non-last tabs
+      }
+    });
+
+    // Apply border radius to the last visible tab
+    if (lastVisibleTab) {
+      lastVisibleTab.style.borderTopRightRadius = '60px'; // Adjust as per your design
+      lastVisibleTab.style.borderBottomRightRadius = '60px'; // Adjust as per your design
+    }
+  }
+
+    // Initial call to apply styles to the last tab
+  updateLastTabBorderRadius();
+
+  // Optional: Reapply whenever the tabs are updated or a tab is clicked
+  // This might be necessary if your tabs dynamically change or are dependent on user interaction
+  document.querySelector('.tab-menu-5').addEventListener('click', function() {
+    setTimeout(updateLastTabBorderRadius, 50); // Delay to ensure the visibility state is updated
+  });
+});
 
   document.getElementById('refreshButton').addEventListener('click', function() {
     var uniqueToken = new Date().getTime();
@@ -54,6 +87,76 @@ window.onload = function(){
             });
         });
     });
+
+document.addEventListener('DOMContentLoaded', function () {
+  // This event listener ensures we check after Webflow has fully loaded the page
+  document.addEventListener('wf-finish-load', function () {
+    // Check if the Splide list has any list items (slides)
+    var splideList = document.querySelector('.splide__list');
+    if (splideList && splideList.children.length === 0) {
+      // If there are no slides, show the 'no-content' div
+      document.getElementById('no-content').style.display = 'block';
+    } else {
+      // Optional: Initialize Splide slider here if not already initialized
+      // and if there are slides present
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  var splideElements = document.querySelectorAll(".splide .splide__slide");
+  var itemCount = splideElements.length;
+  var splideOptions = {
+    type: itemCount > 4 ? "loop" : "slide", // Conditional type based on item count
+    perPage: 4,
+    perMove: 1,
+    focus: "left",
+    gap: "1rem",
+    speed: 500,
+    pagination: false,
+    arrows: itemCount > 4, // Conditionally show arrows based on item count
+    easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+    autoplay: false, // Keeps autoplay disabled
+    pauseOnHover: true,
+    keyboard: true,
+    reducedMotion: {
+      speed: 0,
+      rewindSpeed: 0,
+      autoplay: "pause"
+    },
+    breakpoints: {
+      991: {
+        perPage: 2
+      },
+      767: {
+        perPage: 1
+      }
+    }
+  };
+
+  var splide = new Splide(".splide", splideOptions).mount();
+
+  // Hide arrows if there are less than 4 items
+  if (itemCount <= 4) {
+    var arrowButtons = document.querySelectorAll(".splide__arrows");
+    arrowButtons.forEach(function(button) {
+      button.style.display = 'none';
+    });
+  }
+});
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+      var sortButton = document.getElementById('fs_cmssort_button-1');
+      if (sortButton) sortButton.click();
+    }, 1000); // Adjust the delay as needed, here it's 1000 milliseconds (1 second)
+  });
+
+document.getElementById('refreshButton').addEventListener('click', function() {
+    var uniqueToken = new Date().getTime();
+    var newUrl = window.location.href.split('?')[0] + '?cacheBust=' + uniqueToken;
+    window.location.href = newUrl;
+  });
 
 /**
  * Open the last tab the user had open when they revisit the page.
