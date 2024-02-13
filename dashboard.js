@@ -94,20 +94,7 @@ window.onload = function(){
         });
     });
 
-document.addEventListener('DOMContentLoaded', function () {
-  // This event listener ensures we check after Webflow has fully loaded the page
-  document.addEventListener('wf-finish-load', function () {
-    // Check if the Splide list has any list items (slides)
-    var splideList = document.querySelector('.splide__list');
-    if (splideList && splideList.children.length === 0) {
-      // If there are no slides, show the 'no-content' div
-      document.getElementById('no-content').style.display = 'block';
-    } else {
-      // Optional: Initialize Splide slider here if not already initialized
-      // and if there are slides present
-    }
-  });
-});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var splideElements = document.querySelectorAll(".splide .splide__slide");
