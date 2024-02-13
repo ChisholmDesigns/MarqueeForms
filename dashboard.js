@@ -1,8 +1,4 @@
 
-if(!$('.splide__list.a').length){	
-  // hide .hack30-static-title
-  $('.no-marquee-div').show();
-}
 
 
 document.addEventListener("DOMContentLoaded", function() {
