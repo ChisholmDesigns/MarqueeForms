@@ -196,24 +196,36 @@ document.addEventListener('DOMContentLoaded', () => {
     tinymce.init({
         selector: '#event-credits',
            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	  content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
-        setup: function (editor) {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    setup: function (editor) {
+        var defaultContent = 'Written by <strong>William Shakespeare</strong>';
         editor.on('init', function () {
             var urlParams = new URLSearchParams(window.location.search);
             var frontParam = urlParams.get('front');
             if (frontParam) {
                 editor.setContent(frontParam);
             } else {
-                var content = 'Written by <strong>William Shakespeare</strong>';
-                editor.setContent(content);
+                editor.setContent(defaultContent);
+            }
+        });
+
+        // Focus event to clear default content if it's not changed
+        editor.on('focus', function () {
+            if (editor.getContent() === defaultContent) {
+                editor.setContent('');
+            }
+        });
+
+        // Blur event to restore default content if the editor is empty
+        editor.on('blur', function () {
+            if (!editor.getContent().trim()) {
+                editor.setContent(defaultContent);
             }
         });
     }
@@ -269,25 +281,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 tinymce.init({
         selector: '#ml-frontpage',
-           menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-	table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	  content_style: "body::before { content: 'Shakespeare Birthplace Trust\nThe Old Globe'; font-size: 14px; color: #8687a8; }",
-        setup: function (editor) {
+          menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    setup: function (editor) {
+        var defaultContent = 'Written by <strong>William Shakespeare</strong>';
         editor.on('init', function () {
             var urlParams = new URLSearchParams(window.location.search);
             var frontParam = urlParams.get('front');
             if (frontParam) {
                 editor.setContent(frontParam);
             } else {
-                var content = 'Written by <strong>William Shakespeare</strong>';
-                editor.setContent(content);
+                editor.setContent(defaultContent);
+            }
+        });
+
+        // Focus event to clear default content if it's not changed
+        editor.on('focus', function () {
+            if (editor.getContent() === defaultContent) {
+                editor.setContent('');
+            }
+        });
+
+        // Blur event to restore default content if the editor is empty
+        editor.on('blur', function () {
+            if (!editor.getContent().trim()) {
+                editor.setContent(defaultContent);
             }
         });
     }
@@ -381,14 +405,39 @@ tinymce.init({
         toolbar_mode: 'floating',
 });
     tinymce.init({
-        selector: '#ml-sponsors',
-           menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
+    selector: '#ml-sponsors',
+    menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    setup: function (editor) {
+        var defaultContent = '<ul><li>Shakespeare Birthplace Trust</li><li>The Old Globe</li></ul>';
+        editor.on('init', function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var frontParam = urlParams.get('sponsors');
+            if (frontParam) {
+                editor.setContent(frontParam);
+            } else {
+                editor.setContent(defaultContent);
+            }
+        });
+
+        // Focus event to clear default content if it's not changed
+        editor.on('focus', function () {
+            if (editor.getContent() === defaultContent) {
+                editor.setContent('');
+            }
+        });
+
+        // Blur event to restore default content if the editor is empty
+        editor.on('blur', function () {
+            if (!editor.getContent().trim()) {
+                editor.setContent(defaultContent);
+            }
+        });
+    }
 });
