@@ -240,29 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
     });
-tinymce.init({
-        selector: '#ml-frontpage',
-          menu: {
-        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-        format: { title: 'Format', items: 'bold italic underline | removeformat' },
-        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-    },
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-    toolbar_mode: 'floating',
-    setup: function(editor) {
-    editor.on('focus', function(e) {
-      document.getElementById('front-placeholder').style.display = 'none';
-    });
 
-    editor.on('blur', function(e) {
-      // Optional: Add conditions if you want the placeholder to reappear based on certain criteria
-      if (editor.getContent().trim() === '') {
-        document.getElementById('front-placeholder').style.display = 'block';
-      }
-    });
-  }
-});
 	
     tinymce.init({
         selector: '#ml-message',
