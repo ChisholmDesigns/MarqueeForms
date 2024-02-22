@@ -217,7 +217,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-   
+   document.getElementById('#marqueeintake').addEventListener('submit', function() {
+    var editorContent = tinymce.get('event-credits').getContent();
+    if (editorContent === defaultContent) {
+        tinymce.get('event-credits').setContent('');
+    }
+});
     tinymce.init({
         selector: '#event-setting',
             menu: {
@@ -301,6 +306,12 @@ tinymce.init({
                 editor.setContent(defaultContent);
             }
         });
+    }
+});
+ document.getElementById('#marqueeintake').addEventListener('submit', function() {
+    var editorContent = tinymce.get('ml-frontpage').getContent();
+    if (editorContent === defaultContent) {
+        tinymce.get('ml-frontpage').setContent('');
     }
 });
 	
@@ -426,5 +437,11 @@ tinymce.init({
                 editor.setContent(defaultContent);
             }
         });
+    }
+});
+ document.getElementById('#marqueeintake').addEventListener('submit', function() {
+    var editorContent = tinymce.get('ml-sponsors').getContent();
+    if (editorContent === defaultContent) {
+        tinymce.get('ml-sponsors').setContent('');
     }
 });
