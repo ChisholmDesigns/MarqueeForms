@@ -186,43 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
         edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
         format: { title: 'Format', items: 'bold italic underline | removeformat' },
         tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-    },
-    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-    toolbar_mode: 'floating',
-    setup: function (editor) {
-        var defaultContent = 'Written by <strong>William Shakespeare</strong>';
-        editor.on('init', function () {
-            var urlParams = new URLSearchParams(window.location.search);
-            var frontParam = urlParams.get('front');
-            if (frontParam) {
-                editor.setContent(frontParam);
-            } else {
-                editor.setContent(defaultContent);
-            }
-        });
-
-        // Focus event to clear default content if it's not changed
-        editor.on('focus', function () {
-            if (editor.getContent() === defaultContent) {
-                editor.setContent('');
-            }
-        });
-
-        // Blur event to restore default content if the editor is empty
-        editor.on('blur', function () {
-            if (!editor.getContent().trim()) {
-                editor.setContent(defaultContent);
-            }
-        });
-    }
-});
-   document.getElementById('#wf-form-Marquee-Intake-Form').addEventListener('submit', function() {
-    var editorContent = tinymce.get('event-credits').getContent();
-    if (editorContent === defaultContent) {
-        tinymce.get('event-credits').setContent('');
-    }
-});
+	    },
+	    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+	    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+	    toolbar_mode: 'floating',
+	});
+   
     tinymce.init({
         selector: '#event-setting',
             menu: {
@@ -281,38 +250,7 @@ tinymce.init({
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
-    setup: function (editor) {
-        var defaultContent = 'Written by <strong>William Shakespeare</strong>';
-        editor.on('init', function () {
-            var urlParams = new URLSearchParams(window.location.search);
-            var frontParam = urlParams.get('front');
-            if (frontParam) {
-                editor.setContent(frontParam);
-            } else {
-                editor.setContent(defaultContent);
-            }
-        });
-
-        // Focus event to clear default content if it's not changed
-        editor.on('focus', function () {
-            if (editor.getContent() === defaultContent) {
-                editor.setContent('');
-            }
-        });
-
-        // Blur event to restore default content if the editor is empty
-        editor.on('blur', function () {
-            if (!editor.getContent().trim()) {
-                editor.setContent(defaultContent);
-            }
-        });
-    }
-});
- document.getElementById('#wf-form-Marquee-Intake-Form').addEventListener('submit', function() {
-    var editorContent = tinymce.get('ml-frontpage').getContent();
-    if (editorContent === defaultContent) {
-        tinymce.get('ml-frontpage').setContent('');
-    }
+    
 });
 	
     tinymce.init({
@@ -412,36 +350,5 @@ tinymce.init({
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
-    setup: function (editor) {
-        var defaultContent = '<ul><li>Shakespeare Birthplace Trust</li><li>The Old Globe</li></ul>';
-        editor.on('init', function () {
-            var urlParams = new URLSearchParams(window.location.search);
-            var frontParam = urlParams.get('sponsors');
-            if (frontParam) {
-                editor.setContent(frontParam);
-            } else {
-                editor.setContent(defaultContent);
-            }
-        });
-
-        // Focus event to clear default content if it's not changed
-        editor.on('focus', function () {
-            if (editor.getContent() === defaultContent) {
-                editor.setContent('');
-            }
-        });
-
-        // Blur event to restore default content if the editor is empty
-        editor.on('blur', function () {
-            if (!editor.getContent().trim()) {
-                editor.setContent(defaultContent);
-            }
-        });
-    }
-});
- document.getElementById('#wf-form-Marquee-Intake-Form').addEventListener('submit', function() {
-    var editorContent = tinymce.get('ml-sponsors').getContent();
-    if (editorContent === defaultContent) {
-        tinymce.get('ml-sponsors').setContent('');
-    }
+    
 });
