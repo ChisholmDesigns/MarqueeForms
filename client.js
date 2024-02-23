@@ -18,10 +18,6 @@ $(document).ready(function() {
   $('.event-count').text(eventCount);
 });
 
-window.onload = function(){
-    document.querySelector("#fs_cmssort_button").click();
-    document.querySelector("#fs_cmssort_button2").click();
-};
 
  $(document).ready(function () {
         $('[data-toggle="datepicker"]').datepicker({
