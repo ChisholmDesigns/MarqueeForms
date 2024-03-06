@@ -171,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
        
     });
   
@@ -185,6 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
 	    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
 	    toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
 	});
    
     tinymce.init({
@@ -198,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
         selector: '#event-additional-messaging',
@@ -210,6 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
         selector: '#event-special',
@@ -222,6 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
   tinymce.init({
         selector: '#event-message',
@@ -234,6 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	  table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	  valid_elements: '*[*]', // Allow all elements and their attributes
     });
 
 	
@@ -248,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
         selector: '#ml-message-2',
@@ -260,6 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
  tinymce.init({
     selector: '#ml-message-3',
@@ -274,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
     toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
+	 valid_elements: '*[*]', // Allow all elements and their attributes
 });
 
     tinymce.init({
@@ -299,6 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
         selector: '#ml-special',
@@ -311,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
 tinymce.init({
         selector: '#board-members',
@@ -323,6 +334,7 @@ tinymce.init({
 	table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
+	valid_elements: '*[*]', // Allow all elements and their attributes
 });
     tinymce.init({
     selector: '#ml-sponsors',
@@ -334,5 +346,6 @@ tinymce.init({
     plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     
 });
