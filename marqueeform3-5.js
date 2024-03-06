@@ -324,16 +324,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     tinymce.init({
         selector: '#ml-special',
-  	menu: {
-    edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-    format: { title: 'Format', items: 'bold italic underline | removeformat' },
-    tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-  },
-  plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-  toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-  toolbar_mode: 'floating',
-  link_assume_external_targets: 'https',
-  valid_elements: '*[*]', // Allow all elements and their attributes
+  menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+	    },
+	    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+	    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+	    toolbar_mode: 'floating',
+	    link_assume_external_targets: 'https',
+	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
 tinymce.init({
         selector: '#board-members',
