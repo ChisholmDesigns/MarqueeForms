@@ -131,11 +131,6 @@ setTimeout(initiateValidation, 1000);
         }
     });
 
-    $('[data-toggle="datepicker"]').datepicker().on('changeDate', function(e) {  // <-- New code here
-        // Assuming the datepicker is on the first slide (index 0)
-        validateMandatoryInputs(0);  
-    });
-
 });
 
 $('.select-item').each(function(){
