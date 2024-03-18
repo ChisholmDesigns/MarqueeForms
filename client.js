@@ -1,5 +1,111 @@
+document.addEventListener('DOMContentLoaded', async function() {
+    const memberstack = window.$memberstackDom;
+
+    // Set this variable to 'YES' or 'NO' depending on whether you want the UI to be displayed for new users
+    const displayForNewUsers = 'YES';
+
+    // Only proceed if a member is found
+    const member = await memberstack.getCurrentMember();
+    if (!member) {
+      console.log('No member found, exiting script');
+      return;
+    }
+
+    async function getUpdatesIDFromJson() {
+      try {
+        const memberData = await memberstack.getMemberJSON();
+        console.log(`Member data: ${JSON.stringify(memberData)}`);
+        return memberData?.data?.updatesID || '';
+      } catch (error) {
+        console.error(`Error in getUpdatesIDFromJson function: ${error}`);
+      }
+    }
+
+    async function updateUpdatesIDInJson(newUpdatesID) {
+      try {
+        const memberData = await memberstack.getMemberJSON();
+        memberData.data = memberData.data || {};
+        memberData.data.updatesID = newUpdatesID;
+        console.log(`Updates ID in JSON after update: ${newUpdatesID}`);
+        await memberstack.updateMemberJSON({ json: memberData.data });
+      } catch (error) {
+        console.error(`Error in updateUpdatesIDInJson function: ${error}`);
+      }
+    }
+
+    async function checkAndUpdateUI() {
+      try {
+        const element = document.querySelector('[ms-code-update-item]');
+        const cmsItem = element.textContent;
+        console.log(`CMS item: ${cmsItem}`);
+
+        // Get the current updates ID from JSON
+        const updatesIDFromJson = await getUpdatesIDFromJson();
+        console.log(`Updates ID from JSON: ${updatesIDFromJson}`);
+
+        // Check displayForNewUsers variable to decide behavior
+        if (displayForNewUsers === 'NO' && !updatesIDFromJson) {
+          console.log('Updates ID from JSON is undefined, null, or empty, not changing UI');
+          return;
+        }
+
+        if (cmsItem !== updatesIDFromJson) {
+          const uiElements = document.querySelectorAll('[ms-code-update-ui]');
+          uiElements.forEach(uiElement => {
+            uiElement.style.display = 'block';
+            uiElement.style.opacity = '1';
+          });
+        }
+
+        // Update the updates ID in JSON after the UI has been updated
+        await updateUpdatesIDInJson(cmsItem);
+
+      } catch (error) {
+        console.error(`Error in checkAndUpdateUI function: ${error}`);
+      }
+    }
+
+    // Check and update UI when the page loads
+    checkAndUpdateUI().catch(error => {
+      console.error(`Error in initial functions: ${error}`);
+    });
+  });
 
 
+const elements = document.querySelectorAll('[ms-code-truncate]');
+
+elements.forEach((element) => {
+  const charLimit = parseInt(element.getAttribute('ms-code-truncate'));
+
+  // Create a helper function that will recursively traverse the DOM tree
+  const traverseNodes = (node, count) => {
+    for (let child of node.childNodes) {
+      // If the node is a text node, truncate if necessary
+      if (child.nodeType === Node.TEXT_NODE) {
+        if (count + child.textContent.length > charLimit) {
+          child.textContent = child.textContent.slice(0, charLimit - count) + '...';
+          return count + child.textContent.length;
+        }
+        count += child.textContent.length;
+      }
+      // If the node is an element, recurse through its children
+      else if (child.nodeType === Node.ELEMENT_NODE) {
+        count = traverseNodes(child, count);
+      }
+    }
+    return count;
+  }
+
+  // Create a deep clone of the element to work on. This is so that we don't modify the original element
+  // until we have completely finished processing.
+  const clone = element.cloneNode(true);
+
+  // Traverse and truncate the cloned node
+  traverseNodes(clone, 0);
+
+  // Replace the original element with our modified clone
+  element.parentNode.replaceChild(clone, element);
+});
 
   document.getElementById('refreshButton').addEventListener('click', function() {
     var uniqueToken = new Date().getTime();
