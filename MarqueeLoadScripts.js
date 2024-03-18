@@ -10,6 +10,7 @@ const scriptSources = [
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsselect@1/cmsselect.js", async: true },
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmssort@1/cmssort.js", async: true },
   { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsload@1/cmsload.js", async: true },
+  { src: "https://cdn.jsdelivr.net/npm/@finsweet/attributes-socialshare@1/socialshare.js", async: true},
   { src: "https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js", async: true },
   { src: "https://unpkg.com/popper.js@1", async: true },
   { src: "https://unpkg.com/tippy.js@4", async: true }
