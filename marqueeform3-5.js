@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    table_toolbar: '',
        toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
-	    past_data_images: true,
+	    paste_data_images: true,
 	    smart_past: false,
 	    link_assume_external_targets: 'https',
 	    valid_elements: '*[*]', // Allow all elements and their attributes
