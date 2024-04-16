@@ -175,8 +175,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: false,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
-       
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	    setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
   
 
@@ -192,7 +198,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
 	});
    
     tinymce.init({
@@ -208,7 +221,14 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
     tinymce.init({
         selector: '#event-additional-messaging',
@@ -223,7 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
     tinymce.init({
         selector: '#event-special',
@@ -239,7 +266,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
   tinymce.init({
         selector: '#event-message',
@@ -255,7 +289,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	  block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	  link_assume_external_targets: 'https',
 	   paste_block_drop: true,
-	  valid_elements: '*[*]', // Allow all elements and their attributes
+	  valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
 
 	
@@ -273,7 +314,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
     tinymce.init({
         selector: '#ml-message-2',
@@ -289,7 +337,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
  tinymce.init({
     selector: '#ml-message-3',
@@ -307,7 +362,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	 block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	 link_assume_external_targets: 'https',
 	  paste_block_drop: true,
-	 valid_elements: '*[*]', // Allow all elements and their attributes
+	 valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
 });
 
     tinymce.init({
@@ -324,6 +386,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
     tinymce.init({
         selector: '#ml-additional-messaging',
@@ -341,7 +411,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    smart_past: false,
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
     tinymce.init({
         selector: '#ml-special',
@@ -356,7 +433,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	     paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+		setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
     });
 tinymce.init({
         selector: '#board-members',
@@ -372,7 +456,14 @@ tinymce.init({
 	block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	link_assume_external_targets: 'https',
 	 paste_block_drop: true,
-	valid_elements: '*[*]', // Allow all elements and their attributes
+	valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+	setup: function(editor) {
+    
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
 });
     tinymce.init({
     selector: '#ml-sponsors',
@@ -387,6 +478,12 @@ tinymce.init({
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
 	    paste_block_drop: true,
-	    valid_elements: '*[*]', // Allow all elements and their attributes
+	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
+ 	    setup: function(editor) {
     
-});
+ 		   // Add a getContent filter to remove empty ID attributes
+ 		   editor.on('GetContent', function(e) {
+   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
+  		  });
+ 		 }
+	});
