@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
   tinymce.init({
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	  block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	  link_assume_external_targets: 'https',
-	   paste_block_drop: false,
+	   paste_block_drop: true,
 	  valid_elements: '*[*]', // Allow all elements and their attributes
     });
 
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
  tinymce.init({
@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toolbar_mode: 'floating',
 	 block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	 link_assume_external_targets: 'https',
-	  paste_block_drop: false,
+	  paste_block_drop: true,
 	 valid_elements: '*[*]', // Allow all elements and their attributes
 });
 
@@ -323,7 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
     });
     tinymce.init({
         selector: '#ml-additional-messaging',
@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    paste_data_images: true,
 	    smart_past: false,
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
     tinymce.init({
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	    toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	     paste_block_drop: false,
+	     paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     });
 tinymce.init({
@@ -371,7 +371,7 @@ tinymce.init({
         toolbar_mode: 'floating',
 	block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	link_assume_external_targets: 'https',
-	 paste_block_drop: false,
+	 paste_block_drop: true,
 	valid_elements: '*[*]', // Allow all elements and their attributes
 });
     tinymce.init({
@@ -386,7 +386,7 @@ tinymce.init({
     toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
-	    paste_block_drop: false,
+	    paste_block_drop: true,
 	    valid_elements: '*[*]', // Allow all elements and their attributes
     
 });
