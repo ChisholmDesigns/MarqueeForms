@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             format: { title: 'Format', items: 'bold italic underline | removeformat' },
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
+        plugins: 'anchor autolink charmap emoticons link searchreplace visualblocks wordcount',
        toolbar: 'undo redo | bold italic underline strikethrough | link | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
