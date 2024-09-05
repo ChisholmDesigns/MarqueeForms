@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
             tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
         },
         plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+       toolbar: 'undo redo | bold italic underline strikethrough | link | emoticons charmap | removeformat',
         toolbar_mode: 'floating',
 	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
 	    link_assume_external_targets: 'https',
