@@ -456,7 +456,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function openCloudinaryUploadWidget(callback) {
     cloudinary.openUploadWidget({
         cloud_name: 'your-cloud-name', // Replace with your Cloudinary cloud name
-        upload_preset: 'your-upload-preset', // Replace with your Cloudinary upload preset
+        upload_preset: 'marquee', // Replace with your Cloudinary upload preset
         sources: ['local', 'camera'], // Only allow local file upload and camera
         multiple: false, // Only one image at a time
         cropping: false, // Disable cropping (optional)
