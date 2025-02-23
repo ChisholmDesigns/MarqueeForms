@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Cloudinary Upload Widget Function (Only Allows Uploads, No Browsing)
 function openCloudinaryUploadWidget(callback) {
     cloudinary.openUploadWidget({
-        cloud_name: 'your-cloud-name', // Replace with your Cloudinary cloud name
+        cloud_name: 'daocxdtbe', // Replace with your Cloudinary cloud name
         upload_preset: 'marquee', // Replace with your Cloudinary upload preset
         sources: ['local', 'camera'], // Only allow local file upload and camera
         multiple: false, // Only one image at a time
