@@ -420,28 +420,54 @@ document.addEventListener('DOMContentLoaded', () => {
   		  });
  		 }
     });
-    tinymce.init({
-        selector: '#ml-special',
-  menu: {
+   tinymce.init({
+    selector: '#ml-special',
+    menu: {
         edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
         format: { title: 'Format', items: 'bold italic underline | removeformat' },
         tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-	    },
-	    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount',
-	    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-	    toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-		setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
+    },
+    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount image', // Added 'image' plugin
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
+    link_assume_external_targets: 'https',
+    paste_block_drop: true,
+    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6,img[src|alt|width|height|style]', // Allowed <img> elements
+    image_advtab: true, // Enables advanced image settings
+    image_caption: true, // Enables captions for images
+    object_resizing: true, // Allows drag-resizing images inside the editor
+    file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype === 'image') {
+            openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
+        }
+    },
+    content_style: "img {max-width: 100%; height: auto; display: block; margin: auto;}", // Ensures images are responsive
+    setup: function (editor) {
+        // Remove empty ID attributes from content
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/\s*id=\"\"/g, '');
+        });
+    }
+});
+
+// Cloudinary Upload Widget Function (Only Allows Uploads, No Browsing)
+function openCloudinaryUploadWidget(callback) {
+    cloudinary.openUploadWidget({
+        cloud_name: 'daocxdtbe', // Replace with your Cloudinary cloud name
+        upload_preset: 'ml_default', // Replace with your Cloudinary upload preset
+        sources: ['local', 'camera'], // Only allow local file upload and camera
+        multiple: false, // Only one image at a time
+        cropping: false, // Disable cropping (optional)
+        folder: 'user-uploads' // Optional: Store all images in a specific folder
+    }, (error, result) => {
+        if (!error && result.event === "success") {
+            const imageUrl = result.info.secure_url;
+            callback(imageUrl); // Inserts image into TinyMCE
+        }
     });
+}
+
 tinymce.init({
         selector: '#board-members',
            menu: {
