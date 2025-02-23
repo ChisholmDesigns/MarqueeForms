@@ -183,7 +183,7 @@ window.onload = function(){
 
         copyButtons.forEach(copyButton => {
             copyButton.addEventListener("click", function() {
-                const parentContainer = copyButton.closest(".stepblock");
+                const parentContainer = copyButton.closest(".dashboard-button-wrapper.copy");
                 const artistFormButton = parentContainer.querySelector(".dashboard-button");
 
                 const textArea = document.createElement("textarea");
