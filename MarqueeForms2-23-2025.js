@@ -444,7 +444,26 @@ document.addEventListener('DOMContentLoaded', () => {
             openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
         }
     },
-    content_style: "img {max-width: 100%; height: auto; display: block; margin: auto;}", // Ensures images are responsive
+    content_style: `
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        img.alignleft { 
+            float: left; 
+            margin-right: 15px; 
+        }
+        img.alignright { 
+            float: right; 
+            margin-left: 15px; 
+        }
+        img.aligncenter { 
+            display: block; 
+            margin: 0 auto; 
+        }
+    `
     setup: function (editor) {
         // Remove empty ID attributes from content
         editor.on('GetContent', function (e) {
