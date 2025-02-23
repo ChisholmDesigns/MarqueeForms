@@ -178,24 +178,7 @@ window.onload = function(){
         }
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const copyButtons = document.querySelectorAll(".copyButton");
-
-        copyButtons.forEach(copyButton => {
-            copyButton.addEventListener("click", function() {
-                const parentContainer = copyButton.closest(".dashboard-button-wrapper.copy");
-                const artistFormButton = parentContainer.querySelector(".dashboard-button");
-
-                const textArea = document.createElement("textarea");
-                textArea.value = artistFormButton.href;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand("Copy");
-                document.body.removeChild(textArea);
-                alert("URL copied to clipboard!");
-            });
-        });
-    });
+   
 
 
 
