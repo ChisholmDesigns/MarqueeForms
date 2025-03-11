@@ -463,7 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
             display: block; 
             margin: 0 auto; 
         }
-    `
+    `,
     setup: function (editor) {
         // Remove empty ID attributes from content
         editor.on('GetContent', function (e) {
