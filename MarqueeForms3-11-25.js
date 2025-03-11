@@ -186,242 +186,160 @@ document.addEventListener('DOMContentLoaded', () => {
   		  });
  		 }
     });
-  
-
-    tinymce.init({
-        selector: '#event-credits',
-           menu: {
-        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-        format: { title: 'Format', items: 'bold italic underline | removeformat' },
-        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-	    },
-	    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
-	    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-	    toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-	});
-   
-    tinymce.init({
-        selector: '#event-setting',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists media searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
-    tinymce.init({
-        selector: '#event-additional-messaging',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists media searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
-    tinymce.init({
-        selector: '#event-special',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
-  tinymce.init({
-        selector: '#event-message',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace visualblocks wordcount',
-	  table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image media | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	  block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	  link_assume_external_targets: 'https',
-	   paste_block_drop: true,
-	  valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
 
 	
     tinymce.init({
-        selector: '#ml-message',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
-    tinymce.init({
-        selector: '#ml-message-2',
-            menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
- tinymce.init({
-    selector: '#ml-message-3',
+    selector: '#ml-message',
     menu: {
-        file: { title: 'File', items: 'newdocument restoredraft | preview | print ' },
-        edit: { title: 'Edit', items: 'undo redo | cut copy paste pastetext | selectall' },
-        view: { title: 'View', items: 'code | preview | visualaid visualchars visualblocks | spellchecker | fullscreen' },
-        insert: { title: 'Insert', items: 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
-        format: { title: 'Format', items: 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
-        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | code wordcount' },
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
     },
-    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount image', // Added 'image' plugin
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
-	 block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	 link_assume_external_targets: 'https',
-	  paste_block_drop: true,
-	 valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
+    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
+    link_assume_external_targets: 'https',
+    paste_block_drop: true,
+    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6,img[src|alt|width|height|style]', // Allowed <img> elements
+    image_advtab: true, // Enables advanced image settings
+    image_caption: true, // Enables captions for images
+    object_resizing: true, // Allows drag-resizing images inside the editor
+    file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype === 'image') {
+            openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
+        }
+    },
+    content_style: `
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        img.alignleft { 
+            float: left; 
+            margin-right: 15px; 
+        }
+        img.alignright { 
+            float: right; 
+            margin-left: 15px; 
+        }
+        img.aligncenter { 
+            display: block; 
+            margin: 0 auto; 
+        }
+    `,
+    setup: function (editor) {
+        // Remove empty ID attributes from content
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/\s*id=\"\"/g, '');
+        });
+    }
 });
 
     tinymce.init({
-        selector: '#ml-setting',
-           menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
+    selector: '#ml-message-2',
+    menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount image', // Added 'image' plugin
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
+    link_assume_external_targets: 'https',
+    paste_block_drop: true,
+    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6,img[src|alt|width|height|style]', // Allowed <img> elements
+    image_advtab: true, // Enables advanced image settings
+    image_caption: true, // Enables captions for images
+    object_resizing: true, // Allows drag-resizing images inside the editor
+    file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype === 'image') {
+            openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
+        }
+    },
+    content_style: `
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        img.alignleft { 
+            float: left; 
+            margin-right: 15px; 
+        }
+        img.alignright { 
+            float: right; 
+            margin-left: 15px; 
+        }
+        img.aligncenter { 
+            display: block; 
+            margin: 0 auto; 
+        }
+    `,
+    setup: function (editor) {
+        // Remove empty ID attributes from content
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/\s*id=\"\"/g, '');
+        });
+    }
+});
+
+ tinymce.init({
+    selector: '#ml-message-3',
+    menu: {
+        edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
+        format: { title: 'Format', items: 'bold italic underline | removeformat' },
+        tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
+    },
+    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount image', // Added 'image' plugin
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    toolbar_mode: 'floating',
+    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
+    link_assume_external_targets: 'https',
+    paste_block_drop: true,
+    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6,img[src|alt|width|height|style]', // Allowed <img> elements
+    image_advtab: true, // Enables advanced image settings
+    image_caption: true, // Enables captions for images
+    object_resizing: true, // Allows drag-resizing images inside the editor
+    file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype === 'image') {
+            openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
+        }
+    },
+    content_style: `
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        img.alignleft { 
+            float: left; 
+            margin-right: 15px; 
+        }
+        img.alignright { 
+            float: right; 
+            margin-left: 15px; 
+        }
+        img.aligncenter { 
+            display: block; 
+            margin: 0 auto; 
+        }
+    `,
+    setup: function (editor) {
+        // Remove empty ID attributes from content
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/\s*id=\"\"/g, '');
+        });
+    }
+});
+
+
     
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
-    tinymce.init({
-        selector: '#ml-additional-messaging',
-           menu: {
-            edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
-            format: { title: 'Format', items: 'bold italic underline | removeformat' },
-            tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
-        },
-        plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace visualblocks wordcount',
-	    table_toolbar: '',
-       toolbar: 'undo redo | blocks | bold italic underline strikethrough | link | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
-        toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    paste_data_images: true,
-	    smart_past: false,
-	    link_assume_external_targets: 'https',
-	     paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
-	setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-    });
     tinymce.init({
     selector: '#ml-special',
     menu: {
@@ -512,25 +430,53 @@ tinymce.init({
   		  });
  		 }
 });
-    tinymce.init({
+   tinymce.init({
     selector: '#ml-sponsors',
     menu: {
         edit: { title: 'Edit', items: 'undo redo | cut copy paste | selectall' },
         format: { title: 'Format', items: 'bold italic underline | removeformat' },
         tools: { title: 'Tools', items: 'spellchecker spellcheckerlanguage | wordcount' },
     },
-    plugins: 'anchor autolink charmap codesample emoticons  link lists searchreplace table visualblocks wordcount',
-    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+    plugins: 'anchor autolink charmap codesample emoticons link lists searchreplace table visualblocks wordcount image', // Added 'image' plugin
+    toolbar: 'undo redo | blocks | bold italic underline strikethrough | link image | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
     toolbar_mode: 'floating',
-	    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
-	    link_assume_external_targets: 'https',
-	    paste_block_drop: true,
-	    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6',
- 	    setup: function(editor) {
-    
- 		   // Add a getContent filter to remove empty ID attributes
- 		   editor.on('GetContent', function(e) {
-   		   e.content = e.content.replace(/\s*id=\"\"/g, ''); // Remove empty id attributes
-  		  });
- 		 }
-	});
+    block_formats: 'Title (100%)=h1;Header 2 (50%)=h2;Paragraph (25%)=p;Small Paragraph (10%)=h6',
+    link_assume_external_targets: 'https',
+    paste_block_drop: true,
+    valid_elements: '*[id|dir|class],a[href|target=_blank],strong/b,div[align],br,p,em/i,ul,ol,li,span,script[src|async|charset],h1,h2,h3,h4,h5,h6,img[src|alt|width|height|style]', // Allowed <img> elements
+    image_advtab: true, // Enables advanced image settings
+    image_caption: true, // Enables captions for images
+    object_resizing: true, // Allows drag-resizing images inside the editor
+    file_picker_callback: function (callback, value, meta) {
+        if (meta.filetype === 'image') {
+            openCloudinaryUploadWidget(callback); // Calls Cloudinary Upload
+        }
+    },
+    content_style: `
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
+        img.alignleft { 
+            float: left; 
+            margin-right: 15px; 
+        }
+        img.alignright { 
+            float: right; 
+            margin-left: 15px; 
+        }
+        img.aligncenter { 
+            display: block; 
+            margin: 0 auto; 
+        }
+    `,
+    setup: function (editor) {
+        // Remove empty ID attributes from content
+        editor.on('GetContent', function (e) {
+            e.content = e.content.replace(/\s*id=\"\"/g, '');
+        });
+    }
+});
+
